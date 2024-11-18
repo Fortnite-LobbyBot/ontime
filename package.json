@@ -1,45 +1,57 @@
 {
-  "name": "ontime",
-  "version": "0.2.1",
-  "description": "a human-readable cron",
-  "author": {
-    "name": "Woong Jun",
-    "email": "woong.jun@gmail.com",
-    "url": "http://code.woong.org/"
-  },
-  "contributors": [],
-  "homepage": "http://code.woong.org/ontime",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mycoboco/ontime.git"
-  },
-  "bugs": {
-    "url": "https://github.com/mycoboco/ontime/issues",
-    "email": "woong.jun@gmail.com"
-  },
-  "license": "MIT",
-  "type": "module",
-  "main": "index.js",
-  "scripts": {
-    "test": "tape test/*.js"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "eslint": "^8.57.0",
-    "tape": "^5.9.0"
-  },
-  "engines": {
-    "node": ">=20.0.0"
-  },
-  "keywords": [
-    "cron",
-    "crontab",
-    "cronjob",
-    "schedule",
-    "scheduler",
-    "job scheduler",
-    "task scheduler",
-    "timer",
-    "interval"
-  ]
+	"name": "@fnlb-project/ontime",
+	"version": "0.2.2",
+	"description": "a human-readable cron",
+	"author": {
+		"name": "Woong Jun",
+		"email": "woong.jun@gmail.com",
+		"url": "http://code.woong.org/"
+	},
+	"contributors": [],
+	"homepage": "http://code.woong.org/ontime",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Fortnite-LobbyBot/ontime.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Fortnite-LobbyBot/ontime.git",
+		"email": "oss@fnlb.net"
+	},
+	"license": "MIT",
+	"type": "module",
+	"main": "dist/index.js",
+	"scripts": {
+		"test": "tape test/*.js",
+		"prepublishOnly": "bun run build",
+		"lint": "bun run lint:biome && bun run lint:tsc",
+		"lint:biome": "bun biome check --write .",
+		"lint:tsc": "bun tsc --noEmit"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"eslint": "^9.15.0",
+		"tape": "^5.9.0",
+		"@biomejs/biome": "^1.9.4",
+		"@types/bun": "^1.1.12",
+		"bun-plugin-dts": "^0.3.0",
+		"typescript": "^5.6.3"
+	},
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"exports": {
+		"types": "./dist/index.d.ts",
+		"default": "./dist/index.js"
+	},
+	"keywords": [
+		"cron",
+		"crontab",
+		"cronjob",
+		"schedule",
+		"scheduler",
+		"job scheduler",
+		"task scheduler",
+		"timer",
+		"interval"
+	]
 }
