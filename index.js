@@ -3,7 +3,7 @@
  */
 
 import nextime from './lib/nextime.js';
-import fmt from './lib/fmt.js';
+import { week, norm } from './lib/fmt.js';
 
 let idcnt = 0;
 
@@ -108,10 +108,10 @@ function getCycle(cycles) {
   let r;
   if (cycles[0] === '') {
     r = 's';
-  } else if (fmt.week.test(cycles[0])) {
+  } else if (week.test(cycles[0])) {
     r = 'w';
   } else {
-    r = fmt.norm.exec(cycles[0]);
+    r = norm.exec(cycles[0]);
     if (!r) throw new Error('invalid cycle description');
     if (r[1]) r = '';
     else if (r[2]) r = 'Y';
