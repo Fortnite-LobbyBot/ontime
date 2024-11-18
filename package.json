@@ -7,6 +7,9 @@
     "email": "woong.jun@gmail.com",
     "url": "http://code.woong.org/"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "contributors": [],
   "homepage": "http://code.woong.org/ontime",
   "repository": {
